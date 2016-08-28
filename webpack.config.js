@@ -7,11 +7,10 @@
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/index.js'
+    './app/index.js'
   ],
   output: {
-    path: __dirname,
-    publicPath: '/',
+    path: __dirname + '/server/dist',
     filename: 'bundle.js'
   },
   module: {
@@ -28,6 +27,6 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './server/dist'
   }
 };
