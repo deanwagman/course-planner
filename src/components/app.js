@@ -1,10 +1,4 @@
-// Dean Wagman
-// deanwagman@gmail.com
-// August 27th, 2016
-// This is the main client-side file
-
-
-import React, { Component } from 'react';
+import react, { Component } from 'react';
 import reactDOM from 'react-dom';
 
 class App extends Component {
