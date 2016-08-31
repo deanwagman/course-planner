@@ -10,7 +10,6 @@
 
   .app-controls {
     height: 100%;
-    background-color: lime;
     width: 100%;
     max-width: 300px;
     max-height: 100vh;
@@ -33,6 +32,20 @@
         border: 1px solid black;
         margin: 0;
         cursor: pointer;
+        transition: transform 1s ease;
+        background-color: white;
+      }
+      &--selected {
+        .course-list__item-container {
+          transform: translateX(2em);
+        }
+      }
+      &--conflicted {
+        .course-list__item-container {
+          cursor: not-allowed;
+          opacity: .2;
+          background-color: #ccc;
+        }
       }
     }
     &__title {

@@ -69,6 +69,9 @@ function getConflictingCourses(req, res) {
            courseA.timeIndex[0] == courseB.timeIndex[0];                             /* A and B do not start at the same time */
   });
 
+  // Push the Original as well
+  conflictingCourses.unshift(courseA);
+
   res.json(conflictingCourses);
 }
 

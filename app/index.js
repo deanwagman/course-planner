@@ -6,8 +6,11 @@ import { createStore, applyMiddleware } from 'redux';
 import App from './components/app';
 import reducers from './reducers';
 import Async from './middlewares/async';
+import multi from 'redux-multi';
+import createLogger from 'redux-logger';
 
-const createStoreWithMiddleware = applyMiddleware(Async)(createStore);
+const logger = createLogger();
+const createStoreWithMiddleware = applyMiddleware(Async, multi, logger)(createStore);
 const store = createStoreWithMiddleware(reducers);
 
 const Package = (

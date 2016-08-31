@@ -10,21 +10,32 @@ function getAll() {
   };
 }
 
-function getConflicts(id) {
-  const request = axios.get(`/courses/conflict/${ id }`);
+function addCourse(course) {
+  const request = axios.get(`/courses/conflicts/${ course.id }`);
 
-  return {
-    type: TYPES.GET_CONFLICTS,
-    payload: request
-  };
+  return [
+    {
+      type: TYPES.ADD,
+      payload: course
+    },
+    {
+      type: TYPES.SET_CONFLICTS,
+      payload: request
+    }
+  ];
 }
 
-function add(course) {
-
-  return {
-    type: ADD,
-    payload: course
-  };
+function removeCourse(course) {
+  return [
+    {
+      type: TYPES.REMOVE,
+      payload: course
+    },
+    {
+      type: TYPES.REMOVE_CONFLICTS,
+      payload: course
+    }
+  ];
 }
 
-export { getAll, getConflicts, add };
+export { getAll, addCourse, removeCourse };

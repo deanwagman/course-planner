@@ -11,7 +11,6 @@ class CourseList extends Component {
     super(props);
 
     // Bind all the this
-    // this.handleCourseAction = this.handleCourseAction.bind(this);
     this.renderItem = this.renderItem.bind(this);
   }
 
@@ -19,15 +18,13 @@ class CourseList extends Component {
     this.props.getAll();
   }
 
-  handleClickEvent(course) {
-    console.log(course);
-  }
-
   renderItem(course) {
     return <CourseItem
               { ...course }
               key={ course.name }
-              onClickEvent={ this.handleClickEvent.bind(this, course) } />;
+              onClickEvent={ !course.isAdded ?
+                this.props.addCourse.bind(this, course) :
+                this.props.removeCourse.bind(this, course)} />;
   }
 
   render() {
