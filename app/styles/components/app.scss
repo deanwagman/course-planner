@@ -63,7 +63,7 @@
     &__hour-list {
       list-style: 0;
       padding: 0;
-      margin: 0;
+      margin: 100px 0 0 0;
     }
     &__hour-item {
       display: block;
@@ -87,6 +87,21 @@
       flex: 1;
       width: 20%;
       text-align: center;
+      position: relative;
+    }
+    &__day-title {
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    &__event {
+      width: 100%;
+      background-color: yellow;
+      display: block;
+      position: absolute;
     }
   }
 }

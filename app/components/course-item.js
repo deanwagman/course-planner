@@ -2,6 +2,7 @@ import React from 'react';
 
 const CourseItem = (props) => {
   let className = "course-list__item";
+  let conflictList;
 
   // Conditional Classes
   if (props.isAdded) className += " course-list__item--selected";

@@ -1,9 +1,10 @@
-import { GET_ALL, ADD, REMOVE, SET_CONFLICTS, REMOVE_CONFLICTS } from '../actions/types';
+import { GET_ALL, ADD, REMOVE, SET_CONFLICTS, REMOVE_CONFLICTS, GIVE_CONFLICTED_FEEDBACK } from '../actions/types';
 
 const defaults = {
   isAdded: false,
   isConflicted: false,
-  conflictingCourses: []
+  conflictingCourses: [],
+  showConflictedFeedback: false
 };
 
 function coursesReducer(state = [], action) {
@@ -55,7 +56,7 @@ function coursesReducer(state = [], action) {
     case SET_CONFLICTS:
 
     // If there are conflicts
-    if (action.payload.data.length) {
+    if (action.payload.data.length && !([...state][action.payload.data[0].id].isConflicted)) {
 
       let newCourses = [...state];
       let originalCourse = action.payload.data[0];

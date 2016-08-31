@@ -38,4 +38,12 @@ function removeCourse(course) {
   ];
 }
 
+function giveConflictedFeedback(conflicts) {
+  console.log('hi');
+  return {
+    type: TYPES.GIVE_CONFLICTED_FEEDBACK,
+    payload: conflicts
+  };
+}
+
 export { getAll, addCourse, removeCourse };
