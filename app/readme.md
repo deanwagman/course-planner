@@ -31,6 +31,7 @@ Wednesday August 31st, 2016
 - Keyboard Controls
 - Server Backup of User's settings and Courses. Was working on this, but is not complete.
 - Redux refactoring. I'm still rather new to this and figuring out the best ways to organize my code.
+- TESTING!, implement all of it.
 
 ## Developing
 There is a npm script called "npm run dev", that will start an express server and a webpack server.
