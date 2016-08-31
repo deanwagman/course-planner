@@ -1,34 +1,46 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/';
 import CourseItem from './course-item';
 import axios from 'axios';
+import style from '../styles/components/course-list.scss';
 
 class CourseList extends Component {
+
   constructor(props) {
     super(props);
 
-    this.state = {
-      courses: []
-    };
+    // Bind all the this
+    // this.handleCourseAction = this.handleCourseAction.bind(this);
+    this.renderItem = this.renderItem.bind(this);
   }
 
   componentDidMount() {
-    axios.get('/courses')
-      .then((response) => {
-        this.setState({ courses: response.data});
-      });
+    this.props.getAll();
+  }
+
+  handleClickEvent(course) {
+    console.log(course);
   }
 
   renderItem(course) {
-    return <CourseItem name={ course.name } />;
+    return <CourseItem
+              { ...course }
+              key={ course.name }
+              onClickEvent={ this.handleClickEvent.bind(this, course) } />;
   }
 
   render() {
     return (
       <ul className="course-list">
-        { this.state.courses.map(this.renderItem) }
+        { this.props.courses.map(this.renderItem) }
       </ul>
     );
   }
 }
 
-export default CourseList;
+function mapStateToProps(state) {
+  return { courses: state.courses };
+}
+
+export default connect(mapStateToProps, actions)(CourseList);
