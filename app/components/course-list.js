@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/';
 import CourseItem from './course-item';
 import axios from 'axios';
-import style from '../styles/components/course-list.scss';
 
 class CourseList extends Component {
 

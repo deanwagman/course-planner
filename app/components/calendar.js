@@ -49,7 +49,7 @@ class Calendar extends Component {
     return (
       <li key={ day.dayIndex } className="calendar__day">
         <h3 className="calendar__day-title">{ day.name }</h3>
-        <ul className="calendar__hours">
+        <ul className="calendar__event-list">
           { this.renderEvents(day.dayIndex) }
         </ul>
       </li>

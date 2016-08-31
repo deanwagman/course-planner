@@ -25,7 +25,7 @@ module.exports = {
       time: ['4pm', '5pm'],
       days: ['Tuesdays', 'Thursdays'],
       dayIndex: [2, 4],
-      timeIndex: [4, 5],
+      timeIndex: [14, 15],
     },
     {
       id: 3,

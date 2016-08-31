@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './header';
 import CourseList from './course-list';
 import Calendar from './calendar';
 import normalize from '../../node_modules/normalize.css/normalize.css';
@@ -9,7 +10,7 @@ class App extends Component {
     return (
       <div id="app" className="app">
         <div className="app-controls">
-          <h1 className="app-title">Course Calendar Planner</h1>
+          <Header text="Course Planner" />
           <CourseList />
         </div>
         <Calendar />
